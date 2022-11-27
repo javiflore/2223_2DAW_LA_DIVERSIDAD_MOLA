@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <meta author="Grupo DawVersiTeam">
+    <title>La Diversidad Mola</title>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <a href="index.html">
+                <img src="../../../src/img/logos/logo_lila.png" alt="Logotipo la diversidad mola">
+            </a>
+        </div>
+    </header>
+    <!-- Main de la pantalla Inicio -->
+    <main id="mainInicio">
+        <div id="texto" class="cajonTexto">
+            <div>
+                <h1>
+                    <span>
+                        <img src="../../../src/img/iconos/hola.png" alt="icono amarillo diciendo hola" id="iconoHello">
+                    </span>
+                    Instrucciones
+                </h1>
+            </div>
+            <p>Al pulsar el botón aparecerá un <span class="destacar">mapa mundi</span>, donde podrás seleccionar el continente donde jugarás.</p><br/>
+            <p>Aparecerá un cajón con <span class="destacar">tarjetas</span> que representan países y tendrás que adivinar a qué país se refiere.</p><br/>
+            <p>Pero <span class="destacar">¡CUIDADO!</span> que el tiempo juega en tu contra!! Tienes que ser rápid@ para sacar la máxima puntuación!</p><br/>
+            <p class="destacar">¡¡SUERTE!!</p>
+        </div>
+        <div id="movil"  class="cajonTexto">
+            <h1>Under construction</h1>
+            <p>
+                <span class="destacar">Estamos trabajando</span> para que puedas jugar en tu movil, pero hasta entonces, podrás consultar el
+                <span class="destacar">RANKING</span> para ver quiénes son los mejores!!<br/><br/><span class="destacar">¡¡GRACIAS!!</span>
+            </p>
+        </div>
+        <div id="mapa" class="mundo">
+            <div id="btnranking">
+                <a onclick="mostrarRanking()">
+                    <img src="../../../src/img/iconos/trofeo.png" alt="Icono trofeo">
+                </a>
+            </div>
+            <button id="btnjugar" onclick="mostrarJuego()">JUGAR</button>
+        </div>
+    </main>
+    <!-- Main de la pantalla Juego -->
+    <main id="mainJuego">
+        <h1>La Diversidad Mola GAME</h1>
+        <div>
+            mapa mundi
+        </div>
+    </main>
+    <!-- Main de la pantalla Ranking -->
+    <main id="mainRanking">
+        <h1>La Diversidad Mola RANKING</h1>
+        <div>
+            tabla ranking
+        </div>
+    </main>
+    <footer>
+        <div>
+            <img src="../../../src/img/logos/logo_cuadrado.png" alt="Logotipo cuadrado la diversidad mola">
+        </div>
+        <div>
+            <p> Proyecto "La Diversidad Mola" - Grupo DawVersiTeam</p>
+        </div>
+        <div id="logoFundacion">
+            <a href="https://fundacionloyola.com/vguadalupe/">
+                <img src="../../../src/img/logos/logotipo_evg.png" alt="Logotipo Fundación Loyola">
+            </a>
+        </div>
+    </footer>
+    <script>
+        function mostrarJuego(){
+            console.log('entra script');
+            document.getElementById("mainInicio").style.display= 'none';
+            document.getElementById("mainJuego").style.display= 'block';
+        }
+        function mostrarRanking(){
+            console.log('entra script');
+            document.getElementById("mainInicio").style.display= 'none';
+            document.getElementById("mainJuego").style.display= 'none';
+            document.getElementById("mainRanking").style.display= 'block';
+
+        }
+    </script>
+</body>
+</html>
