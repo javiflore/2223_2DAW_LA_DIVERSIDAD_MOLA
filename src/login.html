@@ -18,7 +18,7 @@
     </header>
     <main id="mainAdmin">
         <div id="login">
-            <form>
+            <form method="post" action="/04/diversidad_mola/src/php/login/loguear.php">
                 <a href="index.html">
                     <img src="img/iconos/flecha.png" id="flecha">  
                 </a>
@@ -26,10 +26,10 @@
                 <hr>
                 <!-- Nombre de Usuario -->
                 <label for="name">Usuario:</label><br>
-                <input type="text" name="nombre"><p></p><br>
+                <input type="text" name="nombre" required><p></p><br>
                 <!-- Contraseña encrptada para el inicio de sesión -->
                 <label for="Usuario">Clave:</label><br>
-                <input type="text" name="clave"><br>
+                <input type="password" name="password" required><br>
                 <button id="boton">INICIAR SESIÓN</button>
             </form>       
         </div>
