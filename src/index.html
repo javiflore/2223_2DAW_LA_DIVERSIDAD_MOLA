@@ -41,9 +41,7 @@
         </div>
         <div id="mapa" class="mundo">
             <div id="btnranking">
-                <a onclick="mostrarRanking()">
-                    <img src="img/iconos/trofeo.png" alt="Icono trofeo">
-                </a>
+                 <img src="img/iconos/trofeo.png" alt="Icono trofeo">  
             </div>
             <button id="btnjugar" onclick="mostrarJuego()">JUGAR</button>
         </div>
@@ -75,19 +73,6 @@
             </a>
         </div>
     </footer>
-    <script>
-        function mostrarJuego(){
-            console.log('entra script');
-            document.getElementById("mainInicio").style.display= 'none';
-            document.getElementById("mainJuego").style.display= 'block';
-        }
-        function mostrarRanking(){
-            console.log('entra script');
-            document.getElementById("mainInicio").style.display= 'none';
-            document.getElementById("mainJuego").style.display= 'none';
-            document.getElementById("mainRanking").style.display= 'block';
-
-        }
-    </script>
+    <script type="module" src="../src/js/app.js"></script>
 </body>
 </html>
