@@ -1,24 +1,55 @@
-///// MEMORIAS /////
-
-Header
-- comprrbar funciona enlaces
-	inicio en logo	OK
-	admin - MAL -> por seguridad tiene que estar en otra url
-
-Main
-- comprobar que enlazan botones:
-	ranking 	OK
-	jugar 	OK
-
-Footer
-- comprobar enlaces
-	fundación	OK
+///// MEMORIAS ///// 
+///// Fco. Javier Florencio Airado /////
 
 
+1. Creación del index.html y style.css
+
+2. Desarrollo página de inicio de la aplicación web
+
+	- Responsive - Flexbox - Porcentajes
+	- Comentarios HTML y CSS
+	- Accesibilidad
+	- Audio y video
+
+	2.1 Problemas encontrados:
+		
+
+3. Comprobaciones:
+
+	3.1 Comprobaciones a las partes de la app:
+
+	Header
+		- responsive	OK
+		- accesibilidad	OK
+		- comprobar enlaces
+			inicio en logo	OK
+			admin - MAL -> por seguridad tiene que estar en OTRA URL (ya no hay logo para el admin)
+
+	Main
+		- responsive	OK
+		- adaptabiblidad	OK
+		- comprobar que enlazan botones:
+			ranking 	OK
+			jugar 	OK
+
+	Footer
+		- responsive	OK
+		- adaptabiblidad	OK
+		- comprobar enlaces
+			fundación	OK
 
 
-NAVEGADOR		LOCAL - HOST - PROBLEMAS
------------------------------------------
-Brave			 OK	   OK     
-Chrome		
-Opera			 OK	   OK
+	NAVEGADOR		LOCAL - HOST - PROBLEMAS
+	-----------------------------------------
+	Brave			 OK	   OK     
+	Chrome		
+	Opera			 OK	   OK
+
+	
+	3.2 Achecekr -> OK
+
+
+
+4. Cambio de estructura del GIT
+
+	- Enlaces relativos
