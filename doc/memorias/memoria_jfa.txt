@@ -1,0 +1,24 @@
+///// MEMORIAS /////
+
+Header
+- comprrbar funciona enlaces
+	inicio en logo	OK
+	admin - MAL -> por seguridad tiene que estar en otra url
+
+Main
+- comprobar que enlazan botones:
+	ranking 	OK
+	jugar 	OK
+
+Footer
+- comprobar enlaces
+	fundación	OK
+
+
+
+
+NAVEGADOR		LOCAL - HOST - PROBLEMAS
+-----------------------------------------
+Brave			 OK	   OK     
+Chrome		
+Opera			 OK	   OK
