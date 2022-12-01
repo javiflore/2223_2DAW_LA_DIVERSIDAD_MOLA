@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <meta author="Grupo DawVersiTeam">
+    <title>La Diversidad Mola</title>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <a href="index.html">
+                <img src="img/logos/logo_lila.png" alt="Logotipo la diversidad mola">
+            </a>
+        </div>
+    </header>
+    <main id="mainAdmin">
+        <div id="login">
+            <form method="post" action="/10/src/php/login/logueado.php">
+                <a href="index.html">
+                    <img src="img/iconos/flecha.png" id="flecha">  
+                </a>
+                <img src="img/iconos/admin.png" id="logo_login"> <br>  
+                <hr>
+                <!-- Nombre de Usuario -->
+                <label for="name">Usuario:</label><br>
+                <input type="text" name="nombre" required><p></p><br>
+                <!-- Contraseña encrptada para el inicio de sesión -->
+                <label for="Usuario">Clave:</label><br>
+                <input type="password" name="password" required><br>
+                <button id="boton">INICIAR SESIÓN</button>
+            </form>       
+        </div>
+    </main>
+    <footer>
+        <div>
+            <img src="img/logos/logo_cuadrado.png" alt="Logotipo cuadrado la diversidad mola">
+        </div>
+        <div>
+            <p> Proyecto "La Diversidad Mola" - Grupo DawVersiTeam</p>
+        </div>
+        <div id="logoFundacion">
+            <img src="img/logos/logotipo_evg.png" alt="Logotipo Fundación Loyola">
+        </div>
+    </footer>
+    <script>
+        function mostrarJuego(){
+            console.log('entra script');
+            document.getElementById("mainInicio").style.display= 'none';
+            document.getElementById("mainJuego").style.display= 'block';
+        }
+        function mostrarRanking(){
+            console.log('entra script');
+            document.getElementById("mainInicio").style.display= 'none';
+            document.getElementById("mainJuego").style.display= 'none';
+            document.getElementById("mainRanking").style.display= 'block';
+
+        }
+    </script>
+</body>
+</html>
