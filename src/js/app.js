@@ -11,6 +11,7 @@ import {VistaHeader} from './vistaheader.js'
 import {VistaInicio} from './vistainicio.js'
 import {VistaJuego} from './vistajuego.js'
 import {VistaRanking} from './vistaranking.js'
+import {VistaContinente} from './vistacontinente.js'
 
 console.log('Cargado')
 
@@ -34,24 +35,37 @@ class Controlador{
 		this.header = document.getElementsByTagName('header')[0]
 		this.mainInicio = document.getElementById('mainInicio')
 		this.mainJuego = document.getElementById('mainJuego')
+		
+		this.europa=document.getElementById('europa')
+		this.namerica=document.getElementById('norteamerica')
+		this.samerica=document.getElementById('suramerica')
+		this.africa=document.getElementById('africa')
+		this.australia=document.getElementById('australia')
+		this.asia=document.getElementById('asia')
+		
+		
+		
+		
+		
 		this.mainRanking = document.getElementById('mainRanking')
+		
 
 		this.vistaHeader = new VistaHeader(this, this.header)
         this.vistaInicio = new VistaInicio(this, this.mainInicio)
 		this.vistaJuego = new VistaJuego(this, this.mainJuego)
 		this.vistaRanking = new VistaRanking(this, this.mainRanking)
 		
-		this.vistaInicio.mostrar(true)
+		
+		this.vistaInicio.mostrar(true,"flex")
     }
 
     /**
 	 * Función para ocultar vistas no visibles
 	 */
 	ocultarVistas(){
-		this.vistaInicio.mostrar(false)
-		this.vistaRanking.mostrar(false)
-		this.vistaJuego.mostrar(false)
-		/*this.vistaAdmin.mostrar(false)*/
+		this.vistaInicio.mostrar(false,"none")
+		this.vistaRanking.mostrar(false,"none")
+		this.vistaJuego.mostrar(false,"none")
 	}
 	
 	/**
@@ -59,7 +73,7 @@ class Controlador{
 	 */
 	pulsarBotonInicio(){
 		this.ocultarVistas()
-		this.vistaInicio.mostrar(true)
+		this.vistaInicio.mostrar(true,"flex")
 	}
 
 	/**
@@ -67,7 +81,8 @@ class Controlador{
 	 */
 	pulsarBotonJuego(){
 		this.ocultarVistas()
-		this.vistaJuego.mostrar(true)
+		this.vistaJuego.mostrar(true,"block")
+		
 	}
 	
 	/**
@@ -75,7 +90,7 @@ class Controlador{
 	 */
 	pulsarBotonRanking(){
 		this.ocultarVistas()
-		this.vistaRanking.mostrar(true)
+		this.vistaRanking.mostrar(true,"flex")
 	}
 
 	getModelo(){
