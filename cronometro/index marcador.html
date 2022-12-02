@@ -1,0 +1,41 @@
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content='mjaque@fundacionloyola.es' />
+        <style type="text/css">
+            body{
+                padding: 20px
+            }
+            div#marcador{
+                border: solid 1px black;
+                width: 200px;
+                padding: 5px 10px;
+                margin-top: 10px;
+            }
+            p#puntos{
+                display: inline;
+            }
+            div#temporizador{
+                float:right;
+                border: solid 1px black;
+
+            }
+        </style>
+		<title>CONTADOR</title>
+    </head>
+    <body>
+        <button id="botonClick">PÚLSAME</button>
+        <button id="botonBorrar">REINICIAR</button>
+        <div id="temporizador">
+            <label id="minutos">00</label>:<label id="segundos">00</label>
+
+        </div>
+        <div id="marcador"> 
+            <span>TOTAL PUNTOS: </span><p id="puntos"></p>
+            <script src="marcador.js"></script>
+        </div>
+        
+    </body>
+</html>
