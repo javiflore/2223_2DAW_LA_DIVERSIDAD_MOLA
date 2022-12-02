@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <meta author="Grupo DawVersiTeam">
+    <title>La Diversidad Mola</title>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <a href="index.html">
+                <img src="img/logos/logo_lila.png" alt="Logotipo la diversidad mola">
+            </a>
+        </div>
+    </header>
+    <!-- Main de la pantalla Inicio -->
+    <main id="mainInicio">
+        <div id="texto" class="cajonTexto">
+            <div>
+                <h1>
+                    <span>
+                        <img src="img/iconos/hola.png" alt="icono amarillo diciendo hola" id="iconoHello">
+                    </span>
+                    Instrucciones
+                </h1>
+            </div>
+            <p>Al pulsar el botón aparecerá un <span class="destacar">mapa mundi</span>, donde podrás seleccionar el continente donde jugarás.</p><br/>
+            <p>Aparecerá un cajón con <span class="destacar">tarjetas</span> que representan países y tendrás que adivinar a qué país se refiere.</p><br/>
+            <p>Pero <span class="destacar">¡CUIDADO!</span> que el tiempo juega en tu contra!! Tienes que ser rápid@ para sacar la máxima puntuación!</p><br/>
+            <p class="destacar">¡¡SUERTE!!</p>
+        </div>
+        <div id="movil"  class="cajonTexto">
+            <h1>Under construction</h1>
+            <p>
+                <span class="destacar">Estamos trabajando</span> para que puedas jugar en tu movil, pero hasta entonces, podrás consultar el
+                <span class="destacar">RANKING</span> para ver quiénes son los mejores!!<br/><br/><span class="destacar">¡¡GRACIAS!!</span>
+            </p>
+        </div>
+        <div id="mapa" class="mundo">
+            <div id="btnranking">
+                <a>
+                    <img src="img/iconos/trofeo.png" alt="Icono trofeo">
+                </a>
+            </div>
+            <button id="btnjugar" onclick="mostrarJuego()">JUGAR</button>
+        </div>
+    </main>
+    <!-- Main de la pantalla Juego -->
+    <main id="mainJuego">
+        <div><h1>La Diversidad Mola GAME</h1></div> 
+    </main>
+    <!-- Main de la pantalla Ranking -->
+    <main id="mainRanking">
+        <nav>
+            <form>
+                <label id="labelOrdenador">SELECCIONE UN CONTINENTE PARA VER SU RANKING: </label>
+                <label id="labelMovil">SELECCIONE CONTINENTE:</label>
+                <select>
+                    <option>América</option>
+                    <option>África</option>
+                    <option>Asia</option>
+                    <option>Europa</option>
+                    <option>Oceanía</option>
+                </select>
+            </form>
+        </nav>
+        <h1 id="tituloRanking">RANKING GLOBAL</h1>
+        <div id="divTabla">
+            <table>
+                <thead>
+                    <th>TOP</th>
+                    <th>JUGADOR</th>
+                    <th class="celdaContinente">CONTINENTE</th>
+                    <th>PUNTOS</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Superman</td>
+                        <td class="celdaContinente">América</td>
+                        <td>100.000</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Spiderman</td>
+                        <td class="celdaContinente">Europa</td>
+                        <td>80.000</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Viuda Negra</td>
+                        <td class="celdaContinente">África</td>
+                        <td>60.000</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Thor</td>
+                        <td class="celdaContinente">Oceanía</td>
+                        <td>40.000</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Hulk</td>
+                        <td class="celdaContinente">Asia</td>
+                        <td>20.000</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Batman</td>
+                        <td class="celdaContinente">Europa</td>
+                        <td>15.000</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Wonder Woman</td>
+                        <td class="celdaContinente">Oceanía</td>
+                        <td>10.000</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Linterna Verde</td>
+                        <td class="celdaContinente">Asia</td>
+                        <td>8.000</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Capitana Marvel</td>
+                        <td class="celdaContinente">América</td>
+                        <td>4.000</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Capitan América</td>
+                        <td class="celdaContinente">América</td>
+                        <td>2.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <img src="img/logos/logo_cuadrado.png" alt="Logotipo cuadrado la diversidad mola">
+        </div>
+        <div>
+            <p> Proyecto "La Diversidad Mola" - Grupo DawVersiTeam</p>
+        </div>
+        <div id="logoFundacion">
+            <a href="https://fundacionloyola.com/vguadalupe/">
+                <img src="img/logos/logotipo_evg.png" alt="Logotipo Fundación Loyola">
+            </a>
+        </div>
+    </footer>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
