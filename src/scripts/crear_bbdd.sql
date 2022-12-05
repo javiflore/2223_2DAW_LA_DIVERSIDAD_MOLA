@@ -1,8 +1,11 @@
 CREATE DATABASE diversidad_mola;
+USE diversidad_mola;
 
 CREATE TABLE administrador(
-	id TINYINT unsigned PRIMARY KEY AUTO_INCREMENT,
-	correo VARCHAR(255) NOT NULL
+	id TINYINT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	nombre varchar(60) NOT NULL, 
+	password varchar(255) NOT NULL, 
+	perfil char(2) NOT NULL CHECK (perfil='GI' OR perfil='LP' OR perfil='AC' OR perfil='DM')
 );
 
 CREATE TABLE continentes(
@@ -12,7 +15,9 @@ CREATE TABLE continentes(
 
 CREATE TABLE paises(
 	id TINYINT unsigned PRIMARY KEY AUTO_INCREMENT,
-	nombre VARCHAR(30) NOT NULL
+	nombre VARCHAR(30) NOT NULL,
+    idContinente TINYINT unsigned NOT NULL,
+    CONSTRAINT FK_ContinentePais FOREIGN KEY (idContinente) REFERENCES continentes(id)
 );
 
 CREATE TABLE partida(
@@ -21,5 +26,14 @@ CREATE TABLE partida(
 	puntuacion SMALLINT NOT NULL,
 	idContinente TINYINT unsigned NOT NULL,
 
-	CONSTRAINT FK_idContinente FOREIGN KEY (idContinente) REFERENCES continentes(id)
+	CONSTRAINT FK_ContinentePartida FOREIGN KEY (idContinente) REFERENCES continentes(id)
+);
+CREATE TABLE imagenes(
+	id TINYINT unsigned PRIMARY KEY AUTO_INCREMENT,
+	nombre VARCHAR(30) NOT NULL,
+	descripcion VARCHAR(500) NOT NULL,
+	ruta VARCHAR(500) NOT NULL,
+	idPais TINYINT unsigned NOT NULL,
+	
+	CONSTRAINT FK_PaisImagen FOREIGN KEY (idPais) REFERENCES paises(id)
 );

@@ -15,7 +15,7 @@ export class VistaHeader extends Vista{
 		 */
         this.imagenInicio = header.getElementsByTagName('img')[0]
 
-        this.imagenInicio.onclick = this.pulsarInicio.bind(this)
+        this.imagenInicio.onclick = this.pulsarInicio.bind(this)                                                                                 
     }
 
     /**

@@ -4,7 +4,7 @@ export class Modelo{
 	 * Constructor del modelo
 	 */
 	constructor(){
-		this.lista = [] //Array de datos
+		this.listaEuropa = [] //Array de datos
 		this.callbacks = [] //Array de callbacks para implementar el observador
 	}
 	/**

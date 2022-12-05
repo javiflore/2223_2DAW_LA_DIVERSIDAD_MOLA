@@ -41,7 +41,7 @@
         </div>
         <div id="mapa" class="mundo">
             <div id="btnranking">
-                <a onclick="mostrarRanking()">
+                <a>
                     <img src="img/iconos/trofeo.png" alt="Icono trofeo">
                 </a>
             </div>
@@ -50,16 +50,95 @@
     </main>
     <!-- Main de la pantalla Juego -->
     <main id="mainJuego">
-        <h1>La Diversidad Mola GAME</h1>
-        <div>
-            mapa mundi
-        </div>
+        <div><h1>La Diversidad Mola GAME</h1></div> 
     </main>
     <!-- Main de la pantalla Ranking -->
     <main id="mainRanking">
-        <h1>La Diversidad Mola RANKING</h1>
-        <div>
-            tabla ranking
+        <nav>
+            <form>
+                <label id="labelOrdenador">SELECCIONE UN CONTINENTE PARA VER SU RANKING: </label>
+                <label id="labelMovil">SELECCIONE CONTINENTE:</label>
+                <select>
+                    <option>América</option>
+                    <option>África</option>
+                    <option>Asia</option>
+                    <option>Europa</option>
+                    <option>Oceanía</option>
+                </select>
+            </form>
+        </nav>
+        <h1 id="tituloRanking">RANKING GLOBAL</h1>
+        <div id="divTabla">
+            <table>
+                <thead>
+                    <th>TOP</th>
+                    <th>JUGADOR</th>
+                    <th class="celdaContinente">CONTINENTE</th>
+                    <th>PUNTOS</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Superman</td>
+                        <td class="celdaContinente">América</td>
+                        <td>100.000</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Spiderman</td>
+                        <td class="celdaContinente">Europa</td>
+                        <td>80.000</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Viuda Negra</td>
+                        <td class="celdaContinente">África</td>
+                        <td>60.000</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Thor</td>
+                        <td class="celdaContinente">Oceanía</td>
+                        <td>40.000</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Hulk</td>
+                        <td class="celdaContinente">Asia</td>
+                        <td>20.000</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Batman</td>
+                        <td class="celdaContinente">Europa</td>
+                        <td>15.000</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Wonder Woman</td>
+                        <td class="celdaContinente">Oceanía</td>
+                        <td>10.000</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Linterna Verde</td>
+                        <td class="celdaContinente">Asia</td>
+                        <td>8.000</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Capitana Marvel</td>
+                        <td class="celdaContinente">América</td>
+                        <td>4.000</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Capitan América</td>
+                        <td class="celdaContinente">América</td>
+                        <td>2.000</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </main>
     <footer>
@@ -75,19 +154,6 @@
             </a>
         </div>
     </footer>
-    <script>
-        function mostrarJuego(){
-            console.log('entra script');
-            document.getElementById("mainInicio").style.display= 'none';
-            document.getElementById("mainJuego").style.display= 'block';
-        }
-        function mostrarRanking(){
-            console.log('entra script');
-            document.getElementById("mainInicio").style.display= 'none';
-            document.getElementById("mainJuego").style.display= 'none';
-            document.getElementById("mainRanking").style.display= 'block';
-
-        }
-    </script>
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>

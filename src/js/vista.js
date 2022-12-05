@@ -11,10 +11,15 @@ export class Vista{
 	 * Método mostrar
 	 * @param {*} ver 
 	 */
-	mostrar(ver){
-		if (ver)
-			this.div.style.display = 'flex'	//Visualizar DIV
+	mostrar(ver,tipo){
+		if (ver){
+			if(tipo=="flex")
+				this.div.style.display = 'flex'	//Visualizar DIV
+			if(tipo=="block")
+				this.div.style.display = 'block'	//Visualizar DIV
+		}
 		else
 			this.div.style.display = 'none'		//Ocultar DIV
 	}
+	
 }
