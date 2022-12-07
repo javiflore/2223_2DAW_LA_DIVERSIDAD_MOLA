@@ -43,12 +43,7 @@ class Controlador{
 		this.australia=document.getElementById('australia')
 		this.asia=document.getElementById('asia')
 		
-		
-		
-		
-		
 		this.mainRanking = document.getElementById('mainRanking')
-		
 
 		this.vistaHeader = new VistaHeader(this, this.header)
         this.vistaInicio = new VistaInicio(this, this.mainInicio)
