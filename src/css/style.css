@@ -184,12 +184,30 @@ button#btnjugar:hover {
 
 
 
+
 /* CUERPO página JUEGO */
 #mainJuego {
     display: none; /* por defecto aparece oculto */
     text-align: center;
     flex-direction: column;
 }
+
+main#mainJuego > div >  h2{
+    display: none;
+}
+
+main#mainJuego > div{
+    
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+
+
+
+
 
 /* Estilos vista del continente - EUROPA */
 div#vistaEuropa{

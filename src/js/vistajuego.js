@@ -12,7 +12,8 @@ export class VistaJuego extends Vista{
 		this.crear()
 		let puntuacion= 0
 		this.botonEuropa = mainJuego.getElementsByTagName('li')[5]
-		this.divMapa= mainJuego.getElementsByTagName('div')[1]
+		this.divMapa = mainJuego.getElementsByTagName('div')[1]
+
 
 		this.botonEuropa.onclick = this.pulsarEuropa.bind(this,puntuacion)
 	}
@@ -22,6 +23,13 @@ export class VistaJuego extends Vista{
 	pulsarEuropa(puntuacion){	
 		this.borrar()
 		this.genEuropa(puntuacion)
+
+		let divPuntuacion = mainJuego.getElementsByTagName('div')[0]
+		console.log(divPuntuacion)
+		let h2Puntuacion = divPuntuacion.getElementsByTagName('h2')[0]
+
+		divPuntuacion.style.display = 'flex'
+		h2Puntuacion.style.display = 'block'
 		
 	}
 	/**
@@ -235,9 +243,6 @@ export class VistaJuego extends Vista{
 							document.getElementById(e.target.id).removeEventListener('drop', drop)
 							//thispuntuacion
 							if(!divImagenes.firstChild){
-								
-								
-								
 								
 								alert("ENHORABUENA: "+puntuacion+" pts")				
 							}

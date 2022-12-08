@@ -10,6 +10,7 @@ let idPais = document.getElementsByTagName('input')[3]
 
 // form.addEventListener('submit', validateForm.bind(this))
 
+
 function validateForm(){
     // console.log(nombre.value, urlImg.value, descripcion.value, idPais.value)
 
@@ -18,10 +19,13 @@ function validateForm(){
     let description = descripcion.value
     let pais = idPais.value
 
-    //validacion campos VACIOS
+    let re = new RegExp('\.(gif|jpe?g|tiff?|png|webp|bmp)$');
+
+    // validación campos VACIOS
     if (name == '' || img == ''|| description == ''|| pais == ''){
         alert('No puedes dejar campos vacíos')
         return false
+    // validaciones longitud campos
     }else if(name.length >= 29){
         alert('Máximo 29 caracteres en Nombre')
         return false
@@ -33,6 +37,10 @@ function validateForm(){
         return false
     }else if(isNaN(pais)){
         alert('idPais tiene que ser un número')
+        return false
+    // validación extensión img
+    }else if(!img.match(re)){
+        alert('Extensiones permitidas .jpg .gif .tif .png .webp .bmp')
         return false
     }
 

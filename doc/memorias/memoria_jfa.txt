@@ -1,5 +1,7 @@
 ///// MEMORIAS /////
 
+/// Sprint 1 - Interfaz Web
+
 Header
 - comprrbar funciona enlaces
 	inicio en logo	OK
@@ -22,3 +24,25 @@ NAVEGADOR		LOCAL - HOST - PROBLEMAS
 Brave			 OK	   OK     
 Chrome		
 Opera			 OK	   OK
+
+
+/// Sprint 3 - Cliente
+
+Validaciones CRUD IMÁGENES
+	- Campos vacíos			OK
+	- Tamaño de los Campos	OK
+	- Exp. Regulares		OK
+	- Tipo de datos			OK
+
+
+Eventos JS (min.2)
+	- 
+	- 
+
+Manejo de ARRAYS
+	-
+
+DATE, SET, MAP
+	-
+
+API AEMET
