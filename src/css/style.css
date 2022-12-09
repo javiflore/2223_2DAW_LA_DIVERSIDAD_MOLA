@@ -51,8 +51,8 @@ footer{
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    bottom: 0;
-    position: absolute;
+    /* bottom: 0;
+    position: absolute; */
 }
 
 /* Elementos del Header */
