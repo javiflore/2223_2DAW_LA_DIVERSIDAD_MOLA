@@ -12,6 +12,7 @@ import {VistaInicio} from './vistainicio.js'
 import {VistaJuego} from './vistajuego.js'
 import {VistaRanking} from './vistaranking.js'
 import {VistaContinente} from './vistacontinente.js'
+import {VistaTiempoAemet} from './vista_tiempo_aemet.js'
 
 console.log('Cargado')
 
@@ -35,6 +36,7 @@ class Controlador{
 		this.header = document.getElementsByTagName('header')[0]
 		this.mainInicio = document.getElementById('mainInicio')
 		this.mainJuego = document.getElementById('mainJuego')
+		this.mainAemet = document.getElementById('mainAemet')
 		
 		this.europa=document.getElementById('europa')
 		this.namerica=document.getElementById('norteamerica')
@@ -49,9 +51,10 @@ class Controlador{
         this.vistaInicio = new VistaInicio(this, this.mainInicio)
 		this.vistaJuego = new VistaJuego(this, this.mainJuego)
 		this.vistaRanking = new VistaRanking(this, this.mainRanking)
-		
+		this.vistaTiempoAemet = new VistaTiempoAemet(this, this.mainAemet)
 		
 		this.vistaInicio.mostrar(true,"flex")
+		this.vistaTiempoAemet.mostrar(true, 'block')
     }
 
     /**
@@ -61,6 +64,7 @@ class Controlador{
 		this.vistaInicio.mostrar(false,"none")
 		this.vistaRanking.mostrar(false,"none")
 		this.vistaJuego.mostrar(false,"none")
+		this.vistaTiempoAemet.mostrar(false,"none")
 	}
 	
 	/**

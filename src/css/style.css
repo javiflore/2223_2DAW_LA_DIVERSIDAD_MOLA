@@ -182,6 +182,9 @@ button#btnjugar:hover {
     to {font-size: 1.5em;}
 }
 
+main#aemet{
+    display: none;
+}
 
 
 
