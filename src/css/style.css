@@ -187,6 +187,17 @@ main#aemet{
 }
 
 
+div#integrantes{
+    display: none;
+    padding: 2%;
+    text-align: center;
+    position: fixed;
+    bottom: 10%;
+    right: 28%;
+    background-color: white;
+    border-radius: 15px;
+}
+
 
 /* CUERPO página JUEGO */
 #mainJuego {
@@ -206,8 +217,20 @@ main#mainJuego > div{
 }
 
 
+form#introNickname{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    width: 60vh;
+}
 
-
+form#introNickname > input{
+    font-size: x-large;
+    margin: 5%;
+}
 
 
 
@@ -508,10 +531,6 @@ footer div#logoFundacion {
         margin: 0;
     }
 
-    footer{
-        position: absolute;
-        bottom: 0;
-    }
 
     div#texto{
         width: 80%;
@@ -609,7 +628,11 @@ footer div#logoFundacion {
     main{
         flex-direction: column;
         margin: 5% auto;
-        width: 100%;
+        width: 95%;
+    }
+
+    main#mainAemet{
+        margin: 5% auto 0 ;
     }
 
     div#texto{

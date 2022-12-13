@@ -13,6 +13,7 @@ export class VistaJuego extends Vista{
 		let puntuacion= 0
 		this.botonEuropa = mainJuego.getElementsByTagName('li')[5]
 		this.divMapa = mainJuego.getElementsByTagName('div')[1]
+		this.divIntroNick = mainJuego.getElementsByTagName('form')[0]
 
 		this.divPuntuacion = mainJuego.getElementsByTagName('div')[0]
 		this.h2Puntuacion = this.divPuntuacion.getElementsByTagName('h2')[0]
@@ -251,7 +252,8 @@ export class VistaJuego extends Vista{
 					//thispuntuacion
 					if(!divImagenes.firstChild){
 						
-						alert("ENHORABUENA: "+puntuacion+" pts")				
+						// salert("ENHORABUENA: "+puntuacion+" pts")
+						this.intro_ranking(puntuacion)			
 					}
 					
 				}
@@ -267,5 +269,14 @@ export class VistaJuego extends Vista{
 			}
 
 		}
+	}
+
+	intro_ranking(pts){
+
+		this.divIntroNick.style.display = 'block'
+
+		let label = this.divIntroNick.getElementsByTagName('label')[0]
+
+		label.innerHTML = pts + 'Puntos'
 	}
 }

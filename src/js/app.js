@@ -22,6 +22,7 @@ class Controlador{
 	 */
 	constructor(){
 		window.onload = this.iniciar.bind(this)
+		this.bandera = false
 	}
 
     /**
@@ -37,6 +38,8 @@ class Controlador{
 		this.mainInicio = document.getElementById('mainInicio')
 		this.mainJuego = document.getElementById('mainJuego')
 		this.mainAemet = document.getElementById('mainAemet')
+		this.divGrupo = document.getElementById('integrantes')
+		this.pGrupo = document.getElementById('grupo')
 		
 		this.europa=document.getElementById('europa')
 		this.namerica=document.getElementById('norteamerica')
@@ -55,6 +58,8 @@ class Controlador{
 		
 		this.vistaInicio.mostrar(true,"flex")
 		this.vistaTiempoAemet.mostrar(true, 'block')
+		this.pGrupo.addEventListener('mouseover', this.overGrupo.bind(this))
+		this.pGrupo.addEventListener('mouseout', this.overGrupo.bind(this))
     }
 
     /**
@@ -94,6 +99,21 @@ class Controlador{
 
 	getModelo(){
 		return this.modelo
+	}
+
+	overGrupo(){
+
+		if(this.bandera){
+			this.divGrupo.style.display = 'none'
+			this.mainInicio.style.filter = 'blur(0px)'
+			this.mainAemet.style.filter = 'blur(0px)'
+			this.bandera = false
+		}else{
+			this.divGrupo.style.display = 'block'
+			this.mainInicio.style.filter = 'blur(3px)'
+			this.mainAemet.style.filter = 'blur(3px)'
+			this.bandera = true
+		}
 	}
 }
 

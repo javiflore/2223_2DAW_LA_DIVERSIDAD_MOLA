@@ -26,6 +26,7 @@ Chrome
 Opera			 OK	   OK
 
 
+
 /// Sprint 3 - Cliente
 
 Validaciones CRUD IMÁGENES
@@ -36,13 +37,13 @@ Validaciones CRUD IMÁGENES
 
 
 Eventos JS (min.2)
-	- 
-	- 
+	- MouseOver	OK
+	- MouseOut	OK
 
 Manejo de ARRAYS
 	- 
 
 DATE, SET, MAP
-	- 
+	- DATE	OK
 
-API AEMET
+API AEMET -	OK
