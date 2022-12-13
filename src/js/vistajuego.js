@@ -14,12 +14,17 @@ export class VistaJuego extends Vista{
 		this.botonEuropa = mainJuego.getElementsByTagName('li')[5]
 		this.divMapa = mainJuego.getElementsByTagName('div')[1]
 		this.divIntroNick = mainJuego.getElementsByTagName('form')[0]
+		this.btnAceptar = mainJuego.getElementsByTagName('input')[1]
 
 		this.divPuntuacion = mainJuego.getElementsByTagName('div')[0]
 		this.h2Puntuacion = this.divPuntuacion.getElementsByTagName('h2')[0]
 
 		this.botonEuropa.onclick = this.pulsarEuropa.bind(this,puntuacion)
+
+
 	}
+
+
 	/**
 	*	Metodo generar europa
 	*/
@@ -27,11 +32,10 @@ export class VistaJuego extends Vista{
 		this.borrar()
 		this.genEuropa(puntuacion)
 
-
 		this.divPuntuacion.style.display = 'flex'
 		this.h2Puntuacion.style.display = 'block'
 		console.log(this.h2Puntuacion)
-		
+	
 	}
 	/**
 	*	Metodo que crea el mapa mundi
@@ -277,6 +281,12 @@ export class VistaJuego extends Vista{
 
 		let label = this.divIntroNick.getElementsByTagName('label')[0]
 
-		label.innerHTML = pts + 'Puntos'
+		label.innerHTML = pts + ' puntos'
+
+		
 	}
+
+	
+
+	
 }

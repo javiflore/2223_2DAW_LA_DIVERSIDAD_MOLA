@@ -867,3 +867,29 @@ div#mapaDrag{
 	background-size: 75px 70px !important;
 	background-color: red !important;
 }
+
+
+
+
+.container{
+    background:#f44544;
+    padding: 5px;
+    position:relative;
+  }
+  .contextMenu{
+    width:100px;
+    height:60px;
+    background: #ecf0f1;
+    border:solid 2px gray; 
+    position:absolute;
+    display:none;
+  }
+  .contextMenu span{
+    cursor:pointer;
+  }
+
+
+
+
+
+

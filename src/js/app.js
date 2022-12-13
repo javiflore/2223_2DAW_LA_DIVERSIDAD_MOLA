@@ -13,6 +13,7 @@ import {VistaJuego} from './vistajuego.js'
 import {VistaRanking} from './vistaranking.js'
 import {VistaContinente} from './vistacontinente.js'
 import {VistaTiempoAemet} from './vista_tiempo_aemet.js'
+import {MenuDcho} from './menu_dcho.js'
 
 console.log('Cargado')
 
@@ -40,6 +41,8 @@ class Controlador{
 		this.mainAemet = document.getElementById('mainAemet')
 		this.divGrupo = document.getElementById('integrantes')
 		this.pGrupo = document.getElementById('grupo')
+		this.menuDcho = document.getElementsByClassName('container')[0]
+
 		
 		this.europa=document.getElementById('europa')
 		this.namerica=document.getElementById('norteamerica')
@@ -55,11 +58,17 @@ class Controlador{
 		this.vistaJuego = new VistaJuego(this, this.mainJuego)
 		this.vistaRanking = new VistaRanking(this, this.mainRanking)
 		this.vistaTiempoAemet = new VistaTiempoAemet(this, this.mainAemet)
+		this.vistaMenuDcho = new MenuDcho(this, this.menuDcho)
 		
 		this.vistaInicio.mostrar(true,"flex")
 		this.vistaTiempoAemet.mostrar(true, 'block')
 		this.pGrupo.addEventListener('mouseover', this.overGrupo.bind(this))
 		this.pGrupo.addEventListener('mouseout', this.overGrupo.bind(this))
+
+
+		this.mainJuego.onclick = this.hideMenu.bind(this);
+        this.mainJuego.oncontextmenu = this.rightClick.bind(this);
+
     }
 
     /**
@@ -115,6 +124,38 @@ class Controlador{
 			this.bandera = true
 		}
 	}
+
+
+	
+
+	hideMenu() {
+		document.getElementsByClassName("contextMenu")[0].style.display = "none"
+	}
+  
+	rightClick(e) {
+		e.preventDefault();
+  
+		if (document.getElementsByClassName("contextMenu")[0]
+				.style.display == "block")
+			hideMenu();
+		else{
+			var menu = document.getElementsByClassName("contextMenu")[0]
+  
+			menu.style.display = 'block';
+			menu.style.left = e.pageX + "px";
+			menu.style.top = e.pageY + "px";
+		}
+	}
+
+
+
+
+
+
+
+
+
+
 }
 
 const app = new Controlador()
