@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <meta author="Grupo DawVersiTeam">
+    <title>La Diversidad Mola</title>
+</head>
+<body>
+    <header>
+		<a href="imgpaises.html"><span class="material-symbols-outlined">arrow_back</span></a>
+		<a href="login.html"><span class="material-symbols-outlined">logout</span></a>
+    </header>
+    <!-- Main de añadir imagen de pais-->
+    <main id="mainModImagenes">
+        <div id="modImagenes">
+			<h1>MODIFICAR IMAGEN</h1>
+			<form action="imgPaises.html" method="post">
+                <label>Nombre: </label><br/>
+                <input type="text" name="nombre"><br/><br/>
+                <label>Descripción: </label><br/>
+                <textarea name="descripcion"></textarea><br/><br/>
+                <label>Imagen: </label><br/>
+                <input type="file" name="ruta"><br/><br/>
+                <label>País: </label>
+                <select name="pais">
+					<option value="espana">España</option>
+					<option value="francia">Francia</option>
+					<option value="japon">Japon</option>
+					<option value="italia">Italia</option>
+					<option value="rusia">Rusia</option>
+					<option value="noruega">Noruega</option>
+					<option value="china">China</option>
+                <select><br/><br/>
+				<div>
+					<a href="imgpaises.html"><div id="volver">VOLVER</div></a>	
+					<input type="submit" name="anadir" value="AÑADIR">
+				</div>
+			</form>
+		</div>
+    </main>
+</body>
+</html>
