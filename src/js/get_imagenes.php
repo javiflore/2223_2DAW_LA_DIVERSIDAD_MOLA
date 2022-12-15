@@ -15,5 +15,4 @@
 				echo"<img src=".$camp1." id=".$camp2.">";
 			}
 	
-	
 ?>

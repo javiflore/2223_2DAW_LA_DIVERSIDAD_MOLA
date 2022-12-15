@@ -34,4 +34,5 @@ export class VistaInicio extends Vista{
 	pulsarRanking(){
         this.controlador.pulsarBotonRanking()
     }
+
 }
