@@ -1,0 +1,871 @@
+/*  
+    Gupo DawVersiTeam 
+    Alberto Bravo Rostro
+    Alejandro Fernández 
+    Javier Florencio Airado
+    Jorge Ortega Rivera
+*/
+
+/* Importamos al css la fuentes descargada */
+@font-face {
+    font-family: 'playworld';
+    src: url('../../src/css/fuente/Playworld.otf') format('truetype');
+}
+
+/* Borrar estilos por defecto del navegador */
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	border: none;
+	outline: none;
+}
+
+
+/***** L A Y O U T *****/
+
+body{
+    background-color: #FEFDDA;
+    font-family: Verdana;
+    color: #4F45F4;
+    /*height: 100vh;*/
+}
+
+/* CABECERA de la página */
+header {
+    background-color: #FFE219;
+    padding: 0 2% 0 1%; /* 2% pading right para separa más el icono que el logo */
+    box-shadow: 4px 5px 20px 0px #1b00b233;
+	overflow:hidden;
+}
+
+/* MAIN */
+main {
+    margin: 3%; /*del total del html que es 100%*/
+}
+
+/* FOOTER */
+footer{
+    background-color: #1C00B2;
+    color: #FEFDDA ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+
+/* Elementos del Header */
+div#logo img { 
+    width: 200px; /* mantenemos en píxeles porque no queremos que se reduzca ni se agrande su tamaño */
+}
+
+/* Elementos del Main */
+h1{
+    font-family: 'playworld';
+    color: #1C00B2;
+    margin-bottom: 1%;
+    font-size: 3.5em;
+    text-shadow: 2px 2px 2px #FEFDDA;
+}
+
+p{
+    font-size: 1.5em;
+}
+
+/* Main de la página INICIAL*/
+#mainInicio{
+    display: flex; /* podríamos utilizar un posicionamiento relativo con floats, pero haciendo un display flex es más facil e intuitivo cambiar la disposición de las cajas y su flexibilidad, al igual que su crecimiento o decrecimiento*/
+    flex-direction: row; /* por defecto dirección de las cajas horizontal, que cambiaremos dependiendo de las medias queries*/
+    align-items: center; /* para alinear en dirección vertical */
+    flex-wrap: nowrap; /*  por defecto cuando los elementos hijos no bajan al no caber */
+}
+
+div#texto{
+    flex-basis: 35%; /* 35% del total del main, esta propiedad establece el ancho incial de la caja */
+    flex-grow: 1; /* por defecto es 0, nosostros queremos que crezca o no dependiendo de la resolución. No hace falta al poner porcentajes de flex-bassis */
+    flex-shrink: 1; /* por defecto ya es 1, para reducir su tamaño cada  */
+}
+
+div#mapa{
+    width: 50%; /* 50% del total del main, es  */
+}
+
+.destacar{
+    font-weight: bold;
+    color:#FFE219;
+}
+
+#iconoHello{
+    width: 1em;
+    float: left; /* para flotar el icono al margen izquierdo del contenedor */
+}
+
+
+.cajonTexto{
+    background-color: #8F88FF;
+    color: #FEFDDA;
+    padding: 2.5%; /* corresponde al total de main */
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 4px 5px 20px 0px #1b00b233;
+}
+
+div#movil{ /* este div se cambia por el texto de instrucciones al pasar a la versión moóvil */
+    display: none;
+}
+
+div#mapa{
+    margin-left: 5%; /* 5% de margin con respecto al margin */
+    background-position: center;
+    background-size: cover;
+    padding: 2.5%;
+    height: 63vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 35% + 50% +  5% + 2.5%*4 (2 paddings por cada caja) = 100% del main */
+
+.mundo{
+    background: url(../../src/img/mapamundi.png) repeat-x 0 0;
+    border-radius: 50%;
+    border: 3px solid #8F88FF;
+    animation: terminator 25s infinite linear; /* nombre, duración del cambio, veces que se repite, estilo movimiento */
+    box-shadow: 0px 15px 60px rgba(255,255,255,0.5) inset,1em 0px 0px rgba(255,255,255,0.1) inset;
+}
+
+@keyframes terminator {
+    0% { background-position: 0 0}
+    50% { background-position: -365px 0; box-shadow: 0px 15px 20px rgba(255,255,255,0.5) inset,40em 0px 80px rgba(0,0,0,0.8) inset;}
+    100% { background-position: -727px 0}
+}
+
+/* botones */
+div#btnranking img{
+    width: 70px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: 1px solid #1C00B2;
+    box-shadow: 0px 0px 0px 2px #8F88FF;
+    cursor: pointer;
+}
+
+button#btnjugar{
+    box-shadow: 0px 0px 0px 2px #8F88FF;
+	background:linear-gradient(to bottom, #8F88FF 5%, #1C00B2 100%);
+	border-radius:10px;
+	border:1px solid #1C00B2;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	padding:12px 37px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #FEFDDA;
+    
+    animation-name: botonJugar;
+    animation-duration: 3s;
+    animation-direction: alternate; /* cambia la dirección de la animación */
+    animation-iteration-count: infinite; /* cuando termina la animación se vuelve a repetir */
+
+}
+
+button#btnjugar:hover {
+	background:linear-gradient(to bottom, #1C00B2 5%, #4F45F4 100%);
+	background-color:#1C00B2;
+}
+
+@keyframes botonJugar {
+    from {font-size: 1em;}
+    to {font-size: 1.5em;}
+}
+
+
+
+/* CUERPO página JUEGO */
+#mainJuego {
+	display:flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+/* Estilos vista del continente - EUROPA */
+div#vistaEuropa{
+    margin: auto;
+    width: 90%;
+}
+ 
+div#vistaEuropa div{
+   display: inline-block;
+}
+
+div#vistaEuropa #divImagenes{
+    background-color: #8F88FF;
+    padding: 2.5%; /* corresponde al total de main */
+    border-radius: 5px;
+    box-shadow: 4px 5px 20px 0px #1b00b233;
+    width: 7.5%;
+}
+
+div#vistaEuropa #divImagenes img{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+
+div#vistaEuropa #divMapaEuropa img{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+
+div#vistaEuropa #divMapaEuropa{
+    padding: 2.5%;
+    background-color: rgb(52, 212, 212);
+    width: 70%;
+    margin-left: 5%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px #120078;
+}
+
+div#vistaEuropa #divMapaEuropa #mapaEuropa{
+    width: 75%;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+
+div#vistaEuropa #divMapaEuropa #espana{
+    position: fixed;
+    top: 65vh;
+    left: 33%;
+    width: 8%;
+    height: 100px;
+    background-color: #1b00b200;
+}
+
+div#temporizador{
+    float: right;
+    background-color: #1C00B2;
+    color:#FFE219;
+    padding: 1%;
+    margin: 1%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px #120078;
+}
+
+/* Mapa interactivo de la vista del juego */
+
+div#divMapa{
+    background-color: rgb(42, 224, 224);
+    display: block;
+    padding: 2%;
+    border-radius: 5px;
+    width: 60%;
+    height: 45vh;
+    margin: auto;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 10px #120078;
+}
+
+div ul#continentes {
+    margin: auto;
+    box-sizing: border-box;
+    list-style: none;
+    background: url(../../src/img/mapa.png) no-repeat 0 0;
+    position: fixed;
+    width: 50%;
+    height: 268px;
+    margin-left: 7%;
+    padding: 0;
+}
+
+ul#continentes li {
+    position: absolute;
+}
+
+ul#continentes li a{
+    display: block;
+    height: 100%;
+    text-decoration: none;
+}
+
+#norteamerica {
+    width: 227px;
+    height: 142px;
+    top: 2px;
+    left: 0px;
+}
+
+#suramerica {
+    width: 108px;
+    height: 130px;
+    top: 131px;
+    left: 76px;
+}
+
+#africa {
+    width: 120px;
+    height: 140px;
+    top: 83px;
+    left: 209px;
+}
+
+#europa {
+    width: 120px;
+    height: 84px;
+    top: 1px;
+    left: 211px;
+
+}
+
+#asia {
+    width: 215px;
+    height: 175px;
+    top: 1px;
+    left: 283px;
+}
+
+#australia {
+    width: 114px;
+    height: 95px;
+    top: 152px;
+    left: 432px;
+}
+
+ul#continentes li a:hover {
+    background: url(../../src/img/mapa.png) no-repeat 0 0;
+    /*background-size: 100% 100%;*/
+}
+ul#continentes li#norteamerica a:hover {
+    background-position: 0 -270px;
+}
+ul#continentes li#suramerica a:hover {
+    background-position: -226px -273px;
+}
+ul#continentes li#africa a:hover {
+    background-position: -209px -417px;
+}
+ul#continentes li#europa a:hover {
+    background-position: -22px -427px;
+}
+ul#continentes li#asia a:hover {
+    background-position: -363px -268px;
+}
+ul#continentes li#australia a:hover {
+    background-position: -412px -455px;
+}
+ul#continentes li a span {
+    display: none;
+}
+ul#continentes li a:hover span {
+    display: block;
+}
+
+
+/* CUERPO página RANKING */
+#mainRanking {
+	display:flex;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/* Nav de filtración por continentes */
+#mainRanking nav{
+    position: absolute;
+    margin: 0px;
+    width: 100%;
+    padding: 0.5% 0px 0.5% 0px ;
+    color: #120078;
+    background-color: #8F88FF;
+    box-shadow: 4px 5px 20px 0px #1b00b233;
+}
+
+#mainRanking nav select{
+    color: #FEFDDA;
+    background-color: #120078;
+    box-shadow: 4px 5px 20px 0px #1b00b233;
+}
+
+#mainRanking nav label#labelMovil{
+    display: none;
+}
+
+#mainRanking h1#tituloRanking{
+    margin-top: 5vh;
+}
+
+/* Tabla del ranking */
+#mainRanking #divTabla table{
+    border-collapse: collapse;
+    margin: auto;
+    background-color: #8F88FF;
+    color: #FEFDDA;
+    width: 50%;
+    border-radius: 5px;
+    box-shadow: 4px 5px 20px 0px #1b00b233;
+}
+
+#mainRanking #divTabla table thead{
+    color: #FFE219;
+    background-color: #120078;
+}
+
+#mainRanking #divTabla table th, tr, td{
+    padding: 8px;
+   /* border: solid 1px #120078;*/
+}
+
+#mainRanking #divTabla table td:hover{
+    background-color:#1C00B2;
+    color: #FFE219;
+    transition: 400ms;
+}
+
+/* Alternamos el color de las filas de la tabla PARES */
+#divTabla tr:nth-child(even){
+    background-color: #4F45F4
+}
+
+/* CUERPO ADMIN */
+/* LOGIN ADMIN */
+div#login{
+    margin:auto;
+    border:solid 1px black;
+    width: 20%;
+    height: 52.84015852047556vh;
+    padding: 1% 5%;
+    background-color: #8F88FF;
+    border-radius: 7px;
+    box-shadow: 7px 7px 12px #8080807d;
+    color: #1C00B2;
+    font-family: verdana;
+    font-weight: bold;
+}
+img#logo_login{
+    margin:auto;
+	margin-bottom:4.6583850931677vh;
+    display: block;
+    margin-top: 1.200155279503106vh;
+    width: 45%;
+    height: auto;
+}
+button#boton{
+    margin:auto;
+    display: block;
+    margin-top:7.763975155279503vh;
+    border:none;
+    padding: 3% 6%;
+    background-color: #1C00B2;
+    border-radius: 7px;
+    box-shadow: 4px 4px 7px #fefddaf6;
+    font-family: verdana;
+    color: white;
+}
+
+button#boton:hover{
+    background-color: #120078;
+    transition: 1s;
+}
+
+div#login input{
+    display: block;
+	width: 70%;
+	margin-top:0.7763975155279503vh;
+	margin-bottom:0.7763975155279503vh;
+}
+/* IMAGENES PAISES ADMIN */
+header#adminHead{
+	position:sticky;
+	top: 0;
+	height:auto;
+	font-size: 1.5em;
+}
+#mainImagenesPaises div#imagenesPaises{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	
+	margin: 0 3.90625% 0 3.90625%;
+	gap:0.5284015852047556vh 0.390625%;
+
+}
+div.imgPais{
+	display: flex;
+	background-color:white;
+	border-radius:7px;
+	
+	align-items: center;
+	justify-content: space-evenly;
+	
+	flex-basis: 33%;/*El tamaño incial del elemento flexible, al modificarlo haces mas grandes o pequeñas las cajas*/
+	flex-grow:0;/*En el caso de que sobre espacio la caja no crecera para ocupar mas espacio */
+	flex-shrink:1;/*En el caso de que falte espacio la caja disminuira  */
+	padding:1.981505944517834vh 0 1.981505944517834vh 0;
+	
+}
+#mainImagenesPaises p{
+	width:37,25806451612903%;
+	font-size:1.5 em;
+}
+#mainImagenesPaises img{
+	width:100%;
+	height:auto;
+	
+}
+#mainImagenesPaises a{
+	width:32.15434083601286%;
+	height:auto;
+}
+#mainImagenesPaises input[type="checkbox"]{
+	width:4.180064308681672%;
+	height:1.717305151915456vh;
+}
+span.material-symbols-outlined{
+	float: right;
+	font-size:1.5em;
+}
+/*AÑADIR IMAGENES*/
+#mainAddImagenes div#addImagenes{
+	background-color:#8F88FF;
+	border-radius: 30px;
+	text-align:center;
+	margin:auto;
+	width:33.6417157275021%;
+	height:66.05019815059445vh;
+}
+#mainAddImagenes div#addImagenes input[type="submit"]{
+    border:none;
+    padding: 1% 3%;
+    background-color: #38e88e;
+    border-radius: 7px;
+    font-family: verdana;
+    font-size:14px;
+	color: white;
+}
+#mainAddImagenes div#addImagenes div#volver{
+	display:inline;
+    padding: 1% 3%;
+    background-color: #e83838;
+    border-radius: 7px;
+    font-family: verdana;
+    color: white;
+	font-size:14px;
+	width:53px;
+}
+/*MODIFICAR IMAGENES*/
+#mainModImagenes div#modImagenes{
+	background-color:#8F88FF;
+	border-radius: 30px;
+	text-align:center;
+	margin:auto;
+	width:33.6417157275021%;
+	height:66.05019815059445vh;
+}
+#mainModImagenes div#modImagenes input[type="submit"]{
+    border:none;
+    padding: 1% 3%;
+    background-color: #38e88e;
+    border-radius: 7px;
+    font-family: verdana;
+    font-size:14px;
+	color: white;
+}
+#mainModImagenes div#modImagenes div#volver{
+	display:inline;
+    padding: 1% 3%;
+    background-color: #e83838;
+    border-radius: 7px;
+    font-family: verdana;
+    color: white;
+	font-size:14px;
+	width:53px;
+}
+/* Elementos del Footer */
+
+footer div img{
+    width: 70px;
+}
+
+footer p{
+    font-size: 1em;
+}
+
+footer div#logoFundacion {
+    margin-right: 20px;
+    border: 4px solid #ffffff;
+}
+
+
+
+
+/***** MEDIAS QUERIES ******/
+
+/* Tablets */
+@media only screen and (max-width: 992px) {
+    body{
+      background-color: rgb(193, 240, 182); 
+    }
+
+    main#mainInicio{
+        flex-direction: column;
+    }
+
+    h1{
+        font-size: 3em;
+     }
+
+    div#texto, div#mapa{
+        width: 60%;
+        height: 36vh;
+    }
+
+    div#texto{
+        margin-bottom: 5%;
+    }
+
+    div#mapa {
+        justify-content: center;
+        margin: 0;
+    }
+
+    footer{
+        position: absolute;
+        bottom: 0;
+    }
+
+    div#texto{
+        width: 80%;
+    }
+
+    #mainRanking nav{
+        font-size: 22px;
+    }
+
+    #mainRanking select{
+        font-size: 18px;
+    }
+
+    #mainRanking #divTabla table{
+        width: 80%;
+        font-size: 25px;
+    }
+
+    div#divMapa{
+        height: 39vh;
+    }
+
+    div ul#continentes{
+        margin-left: 3.5% !important; 
+    }
+
+    /*Vista Europa*/
+    div#vistaEuropa{
+        margin: auto;
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    div#vistaEuropa #divImagenes{
+        margin: auto;
+        padding: 2.5%; /* corresponde al total de main */
+        border-radius: 5px;
+        width: 90%;
+        height: 10vh;
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+
+    div#vistaEuropa #divImagenes img{
+        width: 15%;
+        display: inline;
+    }
+
+    div#vistaEuropa #divMapaEuropa{
+        margin-left: 0px;
+        width: 90%;
+        margin-top: 10vh;
+    }
+
+    div#vistaEuropa #divMapaEuropa #mapaEuropa{
+        width: 100%;
+    }
+
+    div#espana{
+        width: 15% !important;
+        top: 58vh !important;
+        left: 17% !important;
+    }
+	/*Adaptacion del login admin*/
+    div#login{
+		margin:0px 7.5% 0px 7.5%;
+		width: 75%;
+		height:auto;
+		border: none;
+	}
+	/*ADMIN LISTADO IMAGENES*/
+	#mainImagenesPaises div.imgPais{
+		display: flex;
+		flex-basis: 49%;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+	header select{
+		font-size:1.25rem
+	}
+	/*Admin añadir imagenes*/
+	#mainAddImagenes div#addImagenes{
+		font-size: 1.5rem;
+		width: 78.17073170731707%;
+		height: auto;
+	}
+	/*Admin mod imagenes*/
+	#mainModImagenes div#modImagenes{
+		font-size: 1.5rem;
+		width: 78.17073170731707%;
+		height: auto;
+	}
+}
+	
+}
+
+/*Tablet horizontal*/
+@media only screen and (max-width: 1180px) {
+
+    div#divMapa{
+        width: 80%;
+    }
+
+    div ul#continentes{
+        width: 80%;
+        margin-left: 13.5%;
+    }
+
+    div#vistaEuropa #divMapaEuropa{
+        width: 70%;
+    }
+}
+
+/* Phones */
+@media only screen and (max-width: 600px) {
+    body{
+       background-color: lightblue; 
+    }
+
+    header{
+        padding: 0 4% 0 2%;
+    }
+
+    main{
+        flex-direction: column;
+        margin: 5% auto;
+        width: 100%;
+    }
+
+    div#texto{
+        display: none;
+    }
+
+    div#movil, div#mapa{
+        width: 90%;
+    }
+
+    div#movil{
+        display: block;
+    }
+
+    div#mapa {
+        justify-content: center;
+        margin: 5% 0 0; /* queremos margin por arriba, pero no por debajo, ni en los lados*/
+        height: 26.5vh;
+        width: 70%;
+    }
+
+    button#btnjugar{
+        display: none; /* en la versión móvil no se podrá jugar */
+    }
+	/*Adaptacion del login*/
+    div#login{
+		margin:0px 7.5% 0px 7.5%;
+		width: 75%;
+		height:auto;
+		border: none;
+	}
+    /* Adaptación de la vista del Ranking */
+    #mainRanking nav label#labelMovil{
+        display: block;
+    }
+
+    #mainRanking nav label#labelOrdenador{
+        display: none;
+    }
+
+    #mainRanking #divTabla{
+        margin: auto;
+        width: 90%;
+    }
+
+    #mainRanking #divTabla table{
+        width: 90%;
+        font-size: 16px;
+    }
+
+   .celdaContinente{
+        display: none;
+    }
+
+    footer{
+        bottom: 0;
+    }
+
+    div#divMapa{
+        display: none;
+    }
+    
+    ul#continentes{
+        display: none;
+    }
+	/*ADMIN LISTADO IMAGENES*/
+	#mainImagenesPaises div.imgPais{
+		display: flex;
+		flex-basis: 100%;
+	}
+	header select{
+		font-size:0.65rem
+	}
+	header label{
+		font-size:0.65rem
+	}
+	/*Admin añadir imagenes*/
+	#mainAddImagenes div#addImagenes{
+		font-size: 1rem;
+		width: 78.17073170731707%;
+		height: auto;
+	}
+	/*Admin mod imagenes*/
+	#mainModImagenes div#modImagenes{
+		font-size: 1rem;
+		width: 78.17073170731707%;
+		height: auto;
+	}
+}
+
+
+
+
+
+
+
+
+
