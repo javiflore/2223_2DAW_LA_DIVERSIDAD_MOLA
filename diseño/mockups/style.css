@@ -486,7 +486,7 @@ div#login input{
 header#adminHead{
 	position:sticky;
 	top: 0;
-	height:5.284015852047556vh;
+	height:auto;
 	font-size: 1.5em;
 }
 #mainImagenesPaises div#imagenesPaises{
@@ -509,7 +509,7 @@ div.imgPais{
 	
 	flex-basis: 33%;/*El tamaño incial del elemento flexible, al modificarlo haces mas grandes o pequeñas las cajas*/
 	flex-grow:0;/*En el caso de que sobre espacio la caja no crecera para ocupar mas espacio */
-	flex-shrink:1/*En el caso de que falte espacio la caja disminuira  */
+	flex-shrink:1;/*En el caso de que falte espacio la caja disminuira  */
 	padding:1.981505944517834vh 0 1.981505944517834vh 0;
 	
 }
@@ -518,9 +518,13 @@ div.imgPais{
 	font-size:1.5 em;
 }
 #mainImagenesPaises img{
-	width:32.15434083601286%;
+	width:100%;
 	height:auto;
 	
+}
+#mainImagenesPaises a{
+	width:32.15434083601286%;
+	height:auto;
 }
 #mainImagenesPaises input[type="checkbox"]{
 	width:4.180064308681672%;
