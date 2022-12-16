@@ -51,8 +51,8 @@ footer{
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    bottom: 0;
-    position: absolute;
+    /* bottom: 0;
+    position: absolute; */
 }
 
 /* Elementos del Header */
@@ -182,6 +182,21 @@ button#btnjugar:hover {
     to {font-size: 1.5em;}
 }
 
+main#aemet{
+    display: none;
+}
+
+
+div#integrantes{
+    display: none;
+    padding: 2%;
+    text-align: center;
+    position: fixed;
+    bottom: 10%;
+    right: 28%;
+    background-color: white;
+    border-radius: 15px;
+}
 
 
 /* CUERPO página JUEGO */
@@ -190,6 +205,35 @@ button#btnjugar:hover {
     text-align: center;
     flex-direction: column;
 }
+
+main#mainJuego > div >  h2{
+    display: none;
+}
+
+main#mainJuego > div{
+    
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+form#introNickname{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    width: 60vh;
+}
+
+form#introNickname > input{
+    font-size: x-large;
+    margin: 5%;
+}
+
+
+
 
 /* Estilos vista del continente - EUROPA */
 div#vistaEuropa{
@@ -487,10 +531,6 @@ footer div#logoFundacion {
         margin: 0;
     }
 
-    footer{
-        position: absolute;
-        bottom: 0;
-    }
 
     div#texto{
         width: 80%;
@@ -588,7 +628,11 @@ footer div#logoFundacion {
     main{
         flex-direction: column;
         margin: 5% auto;
-        width: 100%;
+        width: 95%;
+    }
+
+    main#mainAemet{
+        margin: 5% auto 0 ;
     }
 
     div#texto{
@@ -823,3 +867,29 @@ div#mapaDrag{
 	background-size: 75px 70px !important;
 	background-color: red !important;
 }
+
+
+
+
+.container{
+    background:#f44544;
+    padding: 5px;
+    position:relative;
+  }
+  .contextMenu{
+    width:100px;
+    height:60px;
+    background: #ecf0f1;
+    border:solid 2px gray; 
+    position:absolute;
+    display:none;
+  }
+  .contextMenu span{
+    cursor:pointer;
+  }
+
+
+
+
+
+

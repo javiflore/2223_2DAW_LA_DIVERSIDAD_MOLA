@@ -12,17 +12,30 @@ export class VistaJuego extends Vista{
 		this.crear()
 		let puntuacion= 0
 		this.botonEuropa = mainJuego.getElementsByTagName('li')[5]
-		this.divMapa= mainJuego.getElementsByTagName('div')[1]
+		this.divMapa = mainJuego.getElementsByTagName('div')[1]
+		this.divIntroNick = mainJuego.getElementsByTagName('form')[0]
+		this.btnAceptar = mainJuego.getElementsByTagName('input')[1]
+
+		this.divPuntuacion = mainJuego.getElementsByTagName('div')[0]
+		this.h2Puntuacion = this.divPuntuacion.getElementsByTagName('h2')[0]
 
 		this.botonEuropa.onclick = this.pulsarEuropa.bind(this,puntuacion)
+
+
 	}
+
+
 	/**
 	*	Metodo generar europa
 	*/
 	pulsarEuropa(puntuacion){	
 		this.borrar()
 		this.genEuropa(puntuacion)
-		
+
+		this.divPuntuacion.style.display = 'flex'
+		this.h2Puntuacion.style.display = 'block'
+		console.log(this.h2Puntuacion)
+	
 	}
 	/**
 	*	Metodo que crea el mapa mundi
@@ -133,133 +146,147 @@ export class VistaJuego extends Vista{
 	addImagenes(contienente,puntuacion){
 		
 		if(contienente=='europa'){
-					let imgEsp = document.getElementById('espana')
-					let imgItalia = document.getElementById('italia')
-					let imgRusia = document.getElementById('rusia')
-					let imgNoruega = document.getElementById('noruega')
-					let imgFrancia = document.getElementById('francia')
-					
-					
-					imgEsp.addEventListener('dragstart',dragStart)
-					imgItalia.addEventListener('dragstart',dragStart)
-					imgRusia.addEventListener('dragstart',dragStart)
-					imgNoruega.addEventListener('dragstart',dragStart)
-					imgFrancia.addEventListener('dragstart',dragStart)
-					
-					
-					
-					
-					let divImagenes = document.getElementById('divImagenes')
-				
-					let dnds = document.querySelectorAll('.dnd')
-						dnds.forEach(dnd => {
-						dnd.addEventListener('dragenter', dragEnter)
-						dnd.addEventListener('dragover', dragOver)
-						dnd.addEventListener('dragleave', dragLeave)
-						dnd.addEventListener('drop', drop)
-					})
-					
-					let divPaises = document.getElementsByClassName('dnd divPais')
-					//console.log(divPaises)
-					for(let i=0; i<divPaises.length; i++){
-						divPaises[i].addEventListener('dragover', dragOverPais)
-						divPaises[i].onmouseenter = function(){
-							   this.classList.add('resaltar')
-						}
-						divPaises[i].onmouseleave = function(){
-							setTimeout(function(){
-							  this.classList.remove('resaltar')
-							}.bind(this),100)
-						}
-						
-					}
-					
-
+			let imgEsp = document.getElementById('espana')
+			let imgItalia = document.getElementById('italia')
+			let imgRusia = document.getElementById('rusia')
+			let imgNoruega = document.getElementById('noruega')
+			let imgFrancia = document.getElementById('francia')
 			
 			
-					/////DRAG no entiendo nada del drag
-					function dragStart(e){
-						e.dataTransfer.setData('text/plain', e.target.id);
-						setTimeout(() => {
-							e.target.classList.add('hide');
-						}, 0);
-					}
-					function dragEnter(e) {
-						e.preventDefault();
-						e.target.classList.add('drag-over');
-					}
+			imgEsp.addEventListener('dragstart',dragStart.bind(this))
+			imgItalia.addEventListener('dragstart',dragStart.bind(this))
+			imgRusia.addEventListener('dragstart',dragStart.bind(this))
+			imgNoruega.addEventListener('dragstart',dragStart.bind(this))
+			imgFrancia.addEventListener('dragstart',dragStart.bind(this))
+			
+			
+			
+			
+			let divImagenes = document.getElementById('divImagenes')
+		
+			let dnds = document.querySelectorAll('.dnd')
+				dnds.forEach(dnd => {
+				dnd.addEventListener('dragenter', dragEnter.bind(this))
+				dnd.addEventListener('dragover', dragOver.bind(this))
+				dnd.addEventListener('dragleave', dragLeave.bind(this))
+				dnd.addEventListener('drop', drop.bind(this))
+			})
+			
+			let divPaises = document.getElementsByClassName('dnd divPais')
+			//console.log(divPaises)
+			for(let i=0; i<divPaises.length; i++){
+				divPaises[i].addEventListener('dragover', dragOverPais)
+				divPaises[i].onmouseenter = function(){
+						this.classList.add('resaltar')
+				}
+				divPaises[i].onmouseleave = function(){
+					setTimeout(function(){
+						this.classList.remove('resaltar')
+					}.bind(this),100)
+				}
+				
+			}
+			
 
-					function dragOver(e) {
-						e.preventDefault();
-						e.target.classList.add('drag-over');	
+	
+	
+			/////DRAG no entiendo nada del drag
+			function dragStart(e){
+				e.dataTransfer.setData('text/plain', e.target.id);
+				setTimeout(() => {
+					e.target.classList.add('hide');
+				}, 0);
+			}
+			function dragEnter(e) {
+				e.preventDefault();
+				e.target.classList.add('drag-over');
+			}
+
+			function dragOver(e) {
+				e.preventDefault();
+				e.target.classList.add('drag-over');	
+			}
+			
+			function dragOverPais(e) {
+				e.preventDefault();
+				e.target.classList.add('drag-over');	
+				this.classList.add('resaltar');
+				setTimeout(function(){
+					this.classList.remove('resaltar');
+				}.bind(this),1000)
+			
+			}
+
+
+			function dragLeave(e) {
+				e.target.classList.remove('drag-over');
+			}
+
+			function drop(e) {
+				e.target.classList.remove('drag-over');
+
+				// get the draggable element
+				let id = e.dataTransfer.getData('text/plain');
+				let draggable = document.getElementById(id);
+
+				// add it to the drop target
+				
+				e.target.appendChild(draggable);
+				if(id.substring(0,3)==e.target.id){
+					console.log("bien hecho")
+					puntuacion+=200
+
+					console.log(puntuacion)
+					
+					console.log(this.h2Puntuacion)
+					// actualizar_puntuacion()
+					this.h2Puntuacion.innerHTML = "Puntuación: "+puntuacion
+
+					document.getElementById(id).removeEventListener('dragstart',dragStart.bind(this))
+					document.getElementById(id).removeEventListener('dragenter',dragEnter.bind(this))
+					document.getElementById(id).removeEventListener('dragover', dragOver.bind(this))
+					document.getElementById(id).removeEventListener('dragleave', dragLeave.bind(this))
+					document.getElementById(id).removeEventListener('drop', drop.bind(this))
+					
+					document.getElementById(e.target.id).removeEventListener('dragstart',dragStart.bind(this))
+					document.getElementById(e.target.id).removeEventListener('dragenter', dragEnter.bind(this))
+					document.getElementById(e.target.id).removeEventListener('dragover', dragOver.bind(this))
+					document.getElementById(e.target.id).removeEventListener('dragleave',dragLeave.bind(this))
+					document.getElementById(e.target.id).removeEventListener('drop',drop.bind(this))
+					//thispuntuacion
+					if(!divImagenes.firstChild){
+						
+						// salert("ENHORABUENA: "+puntuacion+" pts")
+						this.intro_ranking(puntuacion)			
 					}
 					
-					function dragOverPais(e) {
-						e.preventDefault();
-						e.target.classList.add('drag-over');	
-						this.classList.add('resaltar');
-						setTimeout(function(){
-							this.classList.remove('resaltar');
-						}.bind(this),1000)
-						
-					}
+				}
+				else{
+					console.log("mal")
+					puntuacion-=100
+					this.h2Puntuacion.innerHTML = "Puntuación: "+puntuacion
+					divImagenes.appendChild(draggable);					
+				}
 
+				// display the draggable element
+				draggable.classList.remove('hide');
+			}
 
-					function dragLeave(e) {
-						e.target.classList.remove('drag-over');
-					}
-
-					function drop(e) {
-						e.target.classList.remove('drag-over');
-
-						// get the draggable element
-						let id = e.dataTransfer.getData('text/plain');
-						let draggable = document.getElementById(id);
-
-						// add it to the drop target
-						
-						e.target.appendChild(draggable);
-						if(id.substring(0,3)==e.target.id){
-							console.log("bien hecho")
-							puntuacion+=200
-							document.getElementById(id).removeEventListener('dragstart',dragStart)
-							document.getElementById(id).removeEventListener('dragenter', dragEnter)
-							document.getElementById(id).removeEventListener('dragover', dragOver)
-							document.getElementById(id).removeEventListener('dragleave', dragLeave)
-							document.getElementById(id).removeEventListener('drop', drop)
-							
-							document.getElementById(e.target.id).removeEventListener('dragstart',dragStart)
-							document.getElementById(e.target.id).removeEventListener('dragenter', dragEnter)
-							document.getElementById(e.target.id).removeEventListener('dragover', dragOver)
-							document.getElementById(e.target.id).removeEventListener('dragleave', dragLeave)
-							document.getElementById(e.target.id).removeEventListener('drop', drop)
-							//thispuntuacion
-							if(!divImagenes.firstChild){
-								
-								
-								
-								
-								alert("ENHORABUENA: "+puntuacion+" pts")				
-							}
-							
-						}
-						else{
-							console.log("mal")
-							puntuacion-=100
-							divImagenes.appendChild(draggable);					
-						}
-
-						// display the draggable element
-						draggable.classList.remove('hide');
-					}
-				
 		}
+	}
+
+	intro_ranking(pts){
+
+		this.divIntroNick.style.display = 'block'
+
+		let label = this.divIntroNick.getElementsByTagName('label')[0]
+
+		label.innerHTML = pts + ' puntos'
+
 		
-		
-		
-		
-		
-	}		
+	}
+
+	
+
+	
 }
-	
-	
