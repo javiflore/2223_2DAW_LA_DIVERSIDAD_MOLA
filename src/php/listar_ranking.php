@@ -4,7 +4,7 @@
     
     $arrayDatos = [];
 
-	$records = $conn-> prepare('SELECT * FROM partida;');
+	$records = $conn-> prepare('SELECT * FROM partida ORDER BY puntuacion DESC;');
 	
 	$records -> execute();
 		

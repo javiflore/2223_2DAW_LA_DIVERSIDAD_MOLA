@@ -1,5 +1,4 @@
 <?php
-    var_dump($_POST);
 
     $nickname = $_POST['nickname'];
     $ptos = $_POST['puntuacion'];
