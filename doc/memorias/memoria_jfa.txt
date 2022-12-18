@@ -1,18 +1,47 @@
-///// MEMORIAS /////
+///// MEMORIAS JAVIER F.A. /////
+
 
 /// Sprint 1 - Interfaz Web
 
+
+* MOCKUPS de la pantalla de INICIO:
+
+	He utilizado el FLEX BOX, ya que nos permite manejar el movimiento de cajas,
+su dirección y y la manera en que se ensanchan y se estrechan de manera más eficiente.
+A su vez, también nos permite que la ventana de inicio sea escalable, ya que con el
+F.BOX podríamos incluir más contenido a la página web, sin hacer que su disposición
+inicial cambiase.
+
+
 Header
-- comprrbar funciona enlaces
+- comprobar funciona enlaces:
 	inicio en logo	OK
 	admin - MAL -> por seguridad tiene que estar en otra url
 
-Main
+
+MAIN
+
+He utilizado el flexbox con la dirección por defecto (flex-direction: row) para, en la
+versión móvil y tablet poder cambiarla (flex-direction: column) mediante las MEDIAS
+QUERY.
+
+He seteado la propiedad flex-wrap: 
+
 - comprobar que enlazan botones:
 	ranking 	OK
 	jugar 	OK
 
 Footer
+
+He utilizado el F.BOX para hacer el footer escalable y poder introducir en un futuro
+los avisos legales para cookies. He utilizado la propiedad justify-content: space-between
+para alinear(eje horizontal) el espacio que sobra entre todas las cajas, se reparta a
+partes iguales entre  todas ellas, teniendo en cuenta que las cajas de los extremos
+se posicionan en los extremos.
+
+También he utilizado el align-items: center, para centrar las cojas con el eje vertical,
+ya que por dejecto viene alineado a la esquina superior izquierda.
+
 - comprobar enlaces
 	fundación	OK
 
@@ -31,8 +60,8 @@ Opera			 OK	   OK
 
 Validaciones CRUD IMÁGENES
 	- Campos vacíos			OK
-	- Tamaño de los Campos	OK
-	- Exp. Regulares		OK
+	- Tamaño de los Campos		OK
+	- Exp. Regulares			OK
 	- Tipo de datos			OK
 
 

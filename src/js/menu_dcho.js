@@ -27,12 +27,6 @@ export class MenuDcho extends Vista{
         span.textContent = text
     }
 
-    // <div class="container">
-    //     <div class="contextMenu">
-    //         <span>Option 1</span>
-    //         <span>Option 2</span>
-    //         <span>Option 3</span>
-    //     </div>
-    // </div>
+    
 
 }
