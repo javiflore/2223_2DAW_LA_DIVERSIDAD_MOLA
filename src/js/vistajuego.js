@@ -279,14 +279,8 @@ export class VistaJuego extends Vista{
 
 		this.divIntroNick.style.display = 'block'
 
-		let label = this.divIntroNick.getElementsByTagName('label')[0]
-
-		label.innerHTML = pts + ' puntos'
-
-		
+		let input = this.divIntroNick.getElementsByTagName('input')[0]
+		input.value = pts
 	}
-
-	
-
 	
 }
